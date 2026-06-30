@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MY PORTFOLIO</title>
+    <meta name="description" content="Sangamesh H — Computer Science Engineering student and Full Stack Web Developer. Portfolio showcasing projects, skills, and experience.">
+    <title>Sangamesh H | Portfolio</title>
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 
@@ -13,36 +14,6 @@
         rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
-
-    <style>
-        /* Global Styles */
-        body {
-            margin: 0;
-            font-family: 'Outfit', sans-serif;
-            background-color: #0d1117;
-            color: #c9d1d9;
-            overflow-x: hidden;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 24px;
-            background-color: #58a6ff;
-            color: #fff;
-            border-radius: 4px;
-            font-weight: 600;
-            transition: background-color 0.3s ease;
-        }
-
-        .btn:hover {
-            background-color: #1f6feb;
-        }
-    </style>
 </head>
 
 <body>
@@ -64,29 +35,29 @@
     </nav>
 
     <section id="home" class="hero">
-        <div class="hero-subtitle">Welcome to my universe</div>
+        <div class="hero-subtitle reveal">Welcome to my universe</div>
 
-        <h1>
+        <h1 class="reveal">
             Hi, I'm <br>
             <span class="gradient-text">Sangamesh H</span>
         </h1>
 
-        <p>
+        <p class="reveal">
             I build interactive websites, creative digital experiences,
             and modern user interfaces that leave a lasting impression.
         </p>
 
-        <a href="#work" class="btn">
+        <a href="#work" class="btn reveal">
             Explore My Work
         </a>
     </section>
 
     <section id="about">
-        <h2 class="section-title">About Me</h2>
+        <h2 class="section-title reveal">About Me</h2>
 
         <div class="about-grid">
 
-            <div class="about-text">
+            <div class="about-text reveal">
                 <p>
                     Computer Science Engineering student skilled in Full Stack Web Development and Java with Data
                     Structures & Algorithms. Passionate about building efficient applications and solving real-world
@@ -99,7 +70,7 @@
                 </p>
             </div>
 
-            <div class="skills-container">
+            <div class="skills-container reveal">
                 <div class="skill-tag">HTML</div>
                 <div class="skill-tag">CSS</div>
                 <div class="skill-tag">JavaScript</div>
@@ -117,28 +88,28 @@
 
     <section id="work">
 
-        <h2 class="section-title">Featured Projects</h2>
+        <h2 class="section-title reveal">Featured Projects</h2>
 
         <div class="projects-grid">
 
-            <div class="project-card"
-                onclick="window.open('https://github.com/sangameshh31/my-portfolio.git', '_blank')"
+            <!-- TODO: Replace with links to your actual projects (repo or live demo) -->
+            <div class="project-card reveal"
+                onclick="window.open('https://github.com/sangameshh31', '_blank')"
                 style="cursor: pointer;">
                 <i class="fa-solid fa-laptop project-icon"></i>
                 <h3>My Portfolio</h3>
-                <p>Designed and developed a responsive portfolio website featuring modern UI design, animations, project
-                    showcases, and mobile-friendly layouts.</p>
+                <p>Designed and developed a responsive portfolio website featuring modern UI design, animations,
+                    project showcases, and mobile-friendly layouts.</p>
             </div>
-
 
         </div>
     </section>
 
     <footer id="contact">
 
-        <h2>Let's Connect</h2>
+        <h2 class="reveal">Let's Connect</h2>
 
-        <div class="social-links">
+        <div class="social-links reveal">
             <a href="https://github.com/sangameshh31" target="_blank"><i class="fa-brands fa-github"></i></a>
             <a href="https://www.linkedin.com/in/sangameshhavalappanavar" target="_blank"><i
                     class="fa-brands fa-linkedin"></i></a>
@@ -148,6 +119,8 @@
         <p>© 2026 Sangamesh H. All Rights Reserved.</p>
 
     </footer>
+
+    <script src="script.js"></script>
 
 </body>
 
