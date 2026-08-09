@@ -19,6 +19,11 @@ const FEATURED_REPOSITORIES = ["PIZZAPOS", "movie-recommendation-system", "my-po
 const EXCLUDED_REPOSITORIES = ["sangameshh31"];
 const CONTACT_EMAIL = "sangameshhavalappanavar@gmail.com"; 
 
+// Map repository names to a live demo URL when the repo doesn't specify a homepage
+const PROJECT_HOMEPAGES = {
+  "my-portfolio": "https://sangamesh-portfolio-tau.vercel.app/"
+};
+
 function openEmailComposer(subject = "", body = "") {
   const gmailUrl = new URL("https://mail.google.com/mail/");
   gmailUrl.searchParams.set("view", "cm");
@@ -188,6 +193,9 @@ function renderProjects(list) {
 
     const description = repo.description || "A project built and maintained on GitHub.";
 
+    // Prefer explicit repo homepage, otherwise consult the manual mapping
+    const homepage = repo.homepage || PROJECT_HOMEPAGES[repo.name] || "";
+
     return `
       <article class="project-card reveal visible">
         <img
@@ -214,8 +222,8 @@ function renderProjects(list) {
               GitHub ↗
             </a>
             ${
-              repo.homepage
-                ? `<a href="${repo.homepage}" target="_blank" rel="noopener noreferrer">Live demo ↗</a>`
+              homepage
+                ? `<a href="${homepage}" target="_blank" rel="noopener noreferrer">Live demo ↗</a>`
                 : ""
             }
           </div>
