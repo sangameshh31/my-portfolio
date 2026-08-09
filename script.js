@@ -20,9 +20,8 @@ const EXCLUDED_REPOSITORIES = ["sangameshh31"];
 const CONTACT_EMAIL = "sangameshhavalappanavar@gmail.com"; 
 
 // Map repository names to a live demo URL when the repo doesn't specify a homepage
-const PROJECT_HOMEPAGES = {
-  "my-portfolio": "https://sangamesh-portfolio-tau.vercel.app/"
-};
+// (Keep empty to avoid linking to deployments that are not available.)
+const PROJECT_HOMEPAGES = {};
 
 function openEmailComposer(subject = "", body = "") {
   const gmailUrl = new URL("https://mail.google.com/mail/");
