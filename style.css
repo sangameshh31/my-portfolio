@@ -136,3 +136,34 @@ button,input,textarea{font:inherit} button{cursor:pointer}
 .quality-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
 .quality-row span{font-size:.82rem;font-weight:600;padding:6px 12px;border:1px solid var(--border);border-radius:999px;background:var(--accent-soft);color:var(--text);transition:transform .25s,border-color .25s}
 .quality-row span:hover{transform:translateY(-2px);border-color:var(--accent)}
+
+/* ---------- Coder polish — same resume layout, sharper & more attractive ---------- */
+::selection{background:#0f4c81;color:#fff}
+html.light ::selection{background:#0f4c81;color:#fff}
+body{background-image:radial-gradient(rgba(15,76,129,.10) 1px,transparent 1px);background-size:22px 22px}
+html:not(.light) body{background-image:radial-gradient(rgba(125,211,252,.10) 1px,transparent 1px)}
+.scroll-progress{position:fixed;top:0;left:0;right:0;height:3px;z-index:100;background:linear-gradient(90deg,#0f4c81,#16a34a,#eab308);transform:scaleX(0);transform-origin:left}
+.sheet{border-top:4px solid var(--text);box-shadow:0 24px 60px rgba(15,23,42,.14),0 4px 14px rgba(15,23,42,.06);border-radius:14px}
+.logo{font-family:"JetBrains Mono",monospace;font-size:.88rem}
+.logo-code{color:#16a34a;font-weight:700}
+.cursor{color:#16a34a;font-family:"JetBrains Mono",monospace;animation:blink 1.1s steps(1) infinite;margin-left:2px}
+@keyframes blink{50%{opacity:0}}
+.availability{font-family:"JetBrains Mono",monospace;text-transform:none;letter-spacing:0;font-size:.8rem}
+.contact-line{font-family:"JetBrains Mono",monospace;font-size:.82rem}
+.heading-code{font-family:"JetBrains Mono",monospace;color:#16a34a;font-size:.85rem;letter-spacing:0}
+.hero-stats{font-family:"JetBrains Mono",monospace;font-size:.82rem}
+.skill-row dt{font-family:"JetBrains Mono",monospace;font-size:.8rem;text-transform:uppercase;letter-spacing:.05em;color:var(--accent);padding-top:2px}
+.project-lang{font-family:"JetBrains Mono",monospace;color:#16a34a}
+.project-tag{font-family:"JetBrains Mono",monospace;border-radius:6px}
+.project-title{transition:color .25s}.project-card:hover .project-title{color:var(--accent)}
+.quality-row span{font-family:"JetBrains Mono",monospace;font-size:.76rem;border-radius:6px}
+.btn{font-family:"JetBrains Mono",monospace;font-size:.84rem;border-radius:8px}
+.filter-btn{font-family:"JetBrains Mono",monospace}
+.nav-link{font-family:"JetBrains Mono",monospace;font-size:.82rem}
+.entry-meta{font-family:"JetBrains Mono",monospace;font-size:.8rem}
+.contact-list span{color:var(--accent)}
+.resume-header h1{letter-spacing:-.03em}
+.role{color:var(--text);opacity:.75}
+input:focus-visible,a:focus-visible,button:focus-visible{outline:2px solid #16a34a;outline-offset:2px}
+::-webkit-scrollbar{width:10px}::-webkit-scrollbar-track{background:var(--page)}::-webkit-scrollbar-thumb{background:#9ca3af;border-radius:99px;border:2px solid var(--page)}::-webkit-scrollbar-thumb:hover{background:var(--accent)}
+@media print{.scroll-progress,.cursor{display:none!important}body{background-image:none}}

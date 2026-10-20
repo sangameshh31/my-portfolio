@@ -158,6 +158,13 @@ const sectionObserver = new IntersectionObserver(
 
 sections.forEach((section) => sectionObserver.observe(section));
 
+/* ---------- Scroll progress bar ---------- */
+const scrollProgress = document.getElementById("scrollProgress");
+window.addEventListener("scroll", () => {
+  const max = document.documentElement.scrollHeight - window.innerHeight;
+  scrollProgress.style.transform = `scaleX(${max > 0 ? window.scrollY / max : 0})`;
+}, { passive: true });
+
 /* ---------- Back to top ---------- */
 window.addEventListener("scroll", () => {
   backToTop.classList.toggle("show", window.scrollY > 600);
