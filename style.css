@@ -94,3 +94,41 @@ button,input,textarea{font:inherit} button{cursor:pointer}
   .reveal{opacity:1!important;transform:none!important}
 }
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important} html{scroll-behavior:auto}}
+
+/* ---------- Animations (professional, subtle) ---------- */
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@keyframes sheetIn{from{opacity:0;transform:translateY(24px) scale(.995)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes pulseDot{0%{box-shadow:0 0 0 0 rgba(22,163,74,.45)}70%{box-shadow:0 0 0 7px rgba(22,163,74,0)}100%{box-shadow:0 0 0 0 rgba(22,163,74,0)}}
+.sheet{animation:sheetIn .7s cubic-bezier(.22,.8,.32,1) both}
+.resume-header .availability{animation:fadeUp .6s ease both .1s}
+.resume-header h1{animation:fadeUp .6s ease both .2s}
+.resume-header .role{animation:fadeUp .6s ease both .32s}
+.resume-header .contact-line{animation:fadeUp .6s ease both .44s}
+.resume-header .hero-stats{animation:fadeUp .6s ease both .56s}
+.availability .dot{animation:pulseDot 2s ease-out infinite}
+.resume-heading{position:relative}
+.resume-heading::after{content:"";position:absolute;left:0;bottom:-1.5px;height:3px;width:0;background:var(--accent);border-radius:99px;transition:width .9s cubic-bezier(.22,.8,.32,1) .15s}
+.resume-section.visible .resume-heading::after,.resume-section:first-of-type .resume-heading::after{width:72px}
+.nav-link{position:relative;transition:color .25s,background .25s}
+.contact-line a,.project-actions a,.text-link{background-image:linear-gradient(currentColor,currentColor);background-size:0% 1.5px;background-repeat:no-repeat;background-position:left calc(100% - 1px);transition:background-size .35s ease,color .25s}
+.contact-line a:hover,.project-actions a:hover,.text-link:hover{text-decoration:none;background-size:100% 1.5px}
+.skill-row{transition:background .3s,transform .3s,padding-left .3s;border-radius:6px}
+.skill-row:hover{background:var(--accent-soft);transform:translateX(6px);padding-left:10px}
+.project-card{transition:transform .35s ease,background .35s ease,padding-left .35s ease;border-radius:6px}
+.project-card:hover{transform:translateX(6px);background:var(--accent-soft);padding-left:12px}
+.projects-list .project-card{animation:fadeUp .6s ease both}
+.projects-list .project-card:nth-child(2){animation-delay:.1s}
+.projects-list .project-card:nth-child(3){animation-delay:.2s}
+.project-tag{transition:transform .25s,background .25s}
+.project-tag:hover{transform:translateY(-2px) scale(1.04)}
+.entry{transition:transform .35s ease,background .35s ease,padding-left .35s ease;border-radius:6px}
+.entry:hover{transform:translateX(6px);background:var(--accent-soft);padding-left:12px}
+.entry-spaced{margin-top:24px;padding-top:20px;border-top:1px solid var(--border)}
+.btn{transition:transform .25s,box-shadow .25s,background .25s,border-color .25s,opacity .25s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(15,23,42,.14)}
+.btn:active{transform:translateY(0) scale(.98)}
+.filter-btn{transition:all .25s} .filter-btn:hover{transform:translateY(-1px)} .filter-btn.active{transform:scale(1.03)}
+.contact-form input,.contact-form textarea{transition:border-color .25s,box-shadow .25s,transform .25s}
+.back-to-top{transition:transform .25s,opacity .25s} .back-to-top:hover{transform:translateY(-3px)}
+.resume-download{transition:transform .35s,box-shadow .35s} .resume-download:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(15,23,42,.10)}
+@media print{*{animation:none!important;transition:none!important}.sheet{animation:none!important}}
