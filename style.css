@@ -167,3 +167,5 @@ html:not(.light) body{background-image:radial-gradient(rgba(125,211,252,.10) 1px
 input:focus-visible,a:focus-visible,button:focus-visible{outline:2px solid #16a34a;outline-offset:2px}
 ::-webkit-scrollbar{width:10px}::-webkit-scrollbar-track{background:var(--page)}::-webkit-scrollbar-thumb{background:#9ca3af;border-radius:99px;border:2px solid var(--page)}::-webkit-scrollbar-thumb:hover{background:var(--accent)}
 @media print{.scroll-progress,.cursor{display:none!important}body{background-image:none}}
+.resume-header h1.typing .cursor{animation:none;opacity:1}
+#typedName{white-space:pre-wrap}

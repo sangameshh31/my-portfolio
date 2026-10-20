@@ -174,6 +174,32 @@ backToTop.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
+/* ---------- Typing effect for the name (on page open) ---------- */
+const typedName = document.getElementById("typedName");
+const nameHeading = document.getElementById("nameHeading");
+if (typedName && nameHeading) {
+  const fullName = "Sangamesh Havalappanavar";
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduceMotion) {
+    typedName.textContent = fullName;
+  } else {
+    typedName.textContent = "";
+    nameHeading.classList.add("typing");
+    let typedIndex = 0;
+    const typeNext = () => {
+      typedIndex += 1;
+      typedName.textContent = fullName.slice(0, typedIndex);
+      if (typedIndex < fullName.length) {
+        const justTyped = fullName[typedIndex - 1];
+        setTimeout(typeNext, justTyped === " " ? 160 : 55 + Math.random() * 60);
+      } else {
+        nameHeading.classList.remove("typing");
+      }
+    };
+    setTimeout(typeNext, 400);
+  }
+}
+
 /* ---------- GitHub Projects ---------- */
 let repositories = [];
 let activeFilter = "all";
