@@ -113,8 +113,7 @@ function setTheme(theme) {
 }
 
 const savedTheme = localStorage.getItem("portfolio-theme");
-const systemPrefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
-setTheme(savedTheme || (systemPrefersLight ? "light" : "dark"));
+setTheme(savedTheme || "light");
 
 themeToggle.addEventListener("click", () => {
   setTheme(root.classList.contains("light") ? "dark" : "light");
@@ -201,11 +200,6 @@ function getTechnologies(repo) {
   return [...technologies].slice(0, 6);
 }
 
-function thumbnailFor(repo) {
-  // GitHub generates an Open Graph preview for public repositories.
-  return `https://opengraph.githubassets.com/1/${repo.full_name}`;
-}
-
 function renderProjects(list) {
   if (!list.length) {
     projectsGrid.innerHTML = `
@@ -234,35 +228,15 @@ function renderProjects(list) {
 
     return `
       <article class="project-card reveal visible">
-        <img
-          class="project-thumb"
-          src="${thumbnailFor(repo)}"
-          alt="Preview image for ${escapeHTML(repo.name)}"
-          loading="lazy"
-          onerror="this.style.display='none'"
-        >
-
-        <div class="project-body">
+        <div class="project-top">
           <h3 class="project-title">${escapeHTML(displayTitle)}</h3>
-
-          <p class="project-description">
-            ${escapeHTML(description)}
-          </p>
-
-          <div class="project-tags" aria-label="Technologies">
-            ${tags}
-          </div>
-
-          <div class="project-actions">
-            <a href="${repo.html_url}" target="_blank" rel="noopener noreferrer">
-              GitHub ↗
-            </a>
-            ${
-              homepage
-                ? `<a href="${homepage}" target="_blank" rel="noopener noreferrer">Live demo ↗</a>`
-                : ""
-            }
-          </div>
+          <span class="project-lang">${escapeHTML(repo.language || "")}</span>
+        </div>
+        <p class="project-description">${escapeHTML(description)}</p>
+        <div class="project-tags" aria-label="Technologies">${tags}</div>
+        <div class="project-actions">
+          <a href="${repo.html_url}" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+          ${homepage ? `<a href="${homepage}" target="_blank" rel="noopener noreferrer">Live Demo ↗</a>` : ""}
         </div>
       </article>
     `;

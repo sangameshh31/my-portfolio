@@ -3,301 +3,162 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Sangamesh Havalappanavar — Java developer & CSE student building backend systems. Creator of DocuSage, a live Spring Boot RAG backend. Projects, skills, and contact.">
+  <meta name="description" content="Sangamesh Havalappanavar — Java Developer & CSE Student. Resume-style portfolio: DocuSage (Spring Boot RAG backend), PizzaPOS, CineMatch. Skills, projects, education and contact.">
   <meta name="author" content="Sangamesh Havalappanavar">
-  <meta name="theme-color" content="#0b1020">
-  <title>Sangamesh Havalappanavar | Portfolio</title>
-
-  <!-- Fonts: kept to two families for a clean, fast design. -->
+  <meta name="theme-color" content="#f3f4f6">
+  <title>Sangamesh Havalappanavar — Java Developer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-  <!-- Skip link improves keyboard accessibility. -->
   <a class="skip-link" href="#main-content">Skip to content</a>
 
-  <!-- Decorative background. aria-hidden keeps it out of screen readers. -->
-  <div class="background-glow" aria-hidden="true">
-    <span class="glow glow-one"></span>
-    <span class="glow glow-two"></span>
-  </div>
-
-  <!-- ==================== NAVIGATION ==================== -->
+  <!-- Top bar — minimal, like a document toolbar -->
   <header class="site-header" id="top">
-    <nav class="navbar container" aria-label="Primary navigation">
-      <a class="logo" href="#home" aria-label="Sangamesh home">SH<span>.</span></a>
-
-      <button class="nav-toggle" id="navToggle" type="button"
-              aria-label="Open navigation" aria-expanded="false" aria-controls="navMenu">
-        <span></span><span></span><span></span>
-      </button>
-
+    <nav class="navbar" aria-label="Primary navigation">
+      <a class="logo" href="#home">Sangamesh Havalappanavar</a>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="navMenu"><span></span><span></span><span></span></button>
       <div class="nav-menu" id="navMenu">
-        <a class="nav-link active" href="#home">Home</a>
-        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link active" href="#home">Summary</a>
+        <a class="nav-link" href="#about">Skills</a>
         <a class="nav-link" href="#projects">Projects</a>
-        <a class="nav-link" href="#resume">Resume</a>
+        <a class="nav-link" href="#resume">Education</a>
         <a class="nav-link" href="#contact">Contact</a>
-
-        <button class="theme-toggle" id="themeToggle" type="button"
-                aria-label="Switch theme" title="Switch theme">
-          <span id="themeIcon">☾</span>
-        </button>
+        <a class="btn btn-small" href="general.pdf" download>Download Resume ↓</a>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch theme" title="Switch theme"><span id="themeIcon">☾</span></button>
       </div>
     </nav>
   </header>
 
   <main id="main-content">
-    <!-- ==================== HERO ==================== -->
-    <section class="hero section" id="home">
-      <div class="container hero-grid">
-        <div class="hero-content reveal">
-          <p class="eyebrow">Welcome to my portfolio</p>
-          <h1>Hi, I'm <span>Sangamesh</span>.</h1>
-          <h2>Java Developer &amp; CSE Student.</h2>
-          <p class="hero-text">
-            I build backend systems in Java and Spring Boot — including
-            <a href="https://docusage-osm6.onrender.com" target="_blank" rel="noopener noreferrer">DocuSage</a>,
-            a live RAG backend that answers questions from your documents with cited sources.
-            I also build with Python, JavaScript, databases, and AI/ML.
-          </p>
+    <!-- Resume sheet -->
+    <div class="sheet">
 
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#projects">View my projects <span>↗</span></a>
-            <a class="btn btn-secondary" href="https://docusage-osm6.onrender.com" target="_blank" rel="noopener noreferrer">Try DocuSage live <span>↗</span></a>
-            <a class="btn btn-secondary" href="#resume">View resume</a>
-            <a class="btn btn-secondary" href="#contact">Let's connect</a>
+      <!-- RESUME HEADER — no photo -->
+      <section class="resume-header" id="home">
+        <div class="reveal">
+          <p class="availability"><span class="dot"></span> Open to SDE Internships &amp; Entry-Level Roles</p>
+          <h1>Sangamesh Havalappanavar</h1>
+          <p class="role">Java Developer &nbsp;·&nbsp; B.Tech CSE Student &nbsp;·&nbsp; Bengaluru, India</p>
+          <div class="contact-line">
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sangameshhavalappanavar@gmail.com" target="_blank" rel="noopener noreferrer">sangameshhavalappanavar@gmail.com</a>
+            <span class="sep">|</span>
+            <a href="https://github.com/sangameshh31" target="_blank" rel="noopener noreferrer">github.com/sangameshh31</a>
+            <span class="sep">|</span>
+            <a href="https://www.linkedin.com/in/sangameshhavalappanavar/" target="_blank" rel="noopener noreferrer">linkedin.com/in/sangameshhavalappanavar</a>
+            <span class="sep">|</span>
+            <a href="https://docusage-osm6.onrender.com" target="_blank" rel="noopener noreferrer">DocuSage — Live</a>
           </div>
-
-          <div class="hero-stats" aria-label="Portfolio statistics">
-            <div class="stat">
-              <strong id="projectCount">3</strong>
-              <span>Projects</span>
-            </div>
-            <div class="stat">
-              <strong>7th</strong>
-              <span>Semester CSE</span>
-            </div>
-            <div class="stat">
-              <strong>∞</strong>
-              <span>Learning</span>
-            </div>
+          <div class="hero-stats">
+            <span><strong id="projectCount">3</strong> Featured Projects</span>
+            <span class="sep">·</span><span>Java 17 / Spring Boot 3</span>
+            <span class="sep">·</span><span>7th Semester CSE</span>
           </div>
         </div>
+      </section>
 
-        <div class="hero-photo reveal delay-one">
-          <div class="photo-frame">
-            <img src="images/profile.jpeg"
-                 alt="Portrait of Sangamesh Havalappanavar"
-                 loading="eager"
-                 onerror="this.onerror=null;this.src='https://github.com/sangameshh31.png?size=600';">
-          </div>
-          <div class="photo-badge">Open to opportunities</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==================== ABOUT ==================== -->
-    <section class="section" id="about">
-      <div class="container">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Get to know me</p>
-          <h2>About <span>Me</span></h2>
-        </div>
-
-        <div class="about-grid">
-          <article class="about-card reveal">
-            <h3>Who I am</h3>
-            <p>
-              I'm a Computer Science Engineering student focused on Java backend
-              development for SDE roles. I like learning by building real systems
-              end to end — and shipping them live.
-            </p>
-            <p>
-              My flagship project is <strong>DocuSage</strong>: a Retrieval-Augmented
-              Generation backend in Java 17 / Spring Boot 3 with a hand-built vector
-              index, PDF ingestion, and cited answers — deployed live on Render.
-              My current focus is Java, DSA, Spring Boot, REST APIs, and Docker.
-            </p>
-          </article>
-
-          <div class="skills-panel reveal delay-one">
-            <h3>Technical skills</h3>
-            <div class="skill-group">
-              <span class="skill-label">Languages</span>
-              <div class="tag-list">
-                <span class="tag">Java</span>
-                <span class="tag">Python</span>
-                <span class="tag">JavaScript</span>
-                <span class="tag">SQL</span>
-                <span class="tag">HTML5</span>
-                <span class="tag">CSS3</span>
-              </div>
-            </div>
-
-            <div class="skill-group">
-              <span class="skill-label">Backend &amp; frameworks</span>
-              <div class="tag-list">
-                <span class="tag">Spring Boot</span>
-                <span class="tag">Spring Data JPA</span>
-                <span class="tag">REST APIs</span>
-                <span class="tag">Node.js</span>
-                <span class="tag">Express</span>
-                <span class="tag">Electron</span>
-              </div>
-            </div>
-
-            <div class="skill-group">
-              <span class="skill-label">Tools &amp; technologies</span>
-              <div class="tag-list">
-                <span class="tag">Git</span>
-                <span class="tag">GitHub</span>
-                <span class="tag">Docker</span>
-                <span class="tag">Maven</span>
-                <span class="tag">JUnit 5</span>
-                <span class="tag">PostgreSQL</span>
-                <span class="tag">MySQL</span>
-                <span class="tag">Render</span>
-                <span class="tag">Streamlit</span>
-                <span class="tag">Machine Learning</span>
-                <span class="tag">NLP</span>
-              </div>
-            </div>
+      <!-- SUMMARY -->
+      <section class="resume-section">
+        <h2 class="resume-heading">Summary</h2>
+        <div class="section-body reveal">
+          <p>Backend-focused Computer Science student building real systems in Java and Spring Boot. Creator of <strong>DocuSage</strong>, a live Retrieval-Augmented Generation backend that answers questions from uploaded documents with cited passages. Strong focus on Java, Data Structures &amp; Algorithms, REST APIs, databases, and Docker — learning by building and shipping end to end.</p>
+          <div class="action-row">
+            <a class="btn btn-primary" href="#projects">View Projects</a>
+            <a class="btn btn-secondary" href="https://docusage-osm6.onrender.com" target="_blank" rel="noopener noreferrer">Try DocuSage Live ↗</a>
+            <a class="btn btn-secondary" href="general.pdf" target="_blank" rel="noopener noreferrer">View Resume PDF ↗</a>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ==================== PROJECTS ==================== -->
-    <section class="section projects-section" id="projects">
-      <div class="container">
-        <div class="section-heading section-heading-row reveal">
-          <div>
-            <p class="eyebrow">What I've built</p>
-            <h2>Featured <span>Projects</span></h2>
-          </div>
-          <a class="text-link" href="https://github.com/sangameshh31?tab=repositories"
-             target="_blank" rel="noopener noreferrer">View all on GitHub ↗</a>
+      <!-- SKILLS -->
+      <section class="resume-section" id="about">
+        <h2 class="resume-heading">Technical Skills</h2>
+        <div class="section-body reveal">
+          <dl class="skills-table">
+            <div class="skill-row"><dt>Languages</dt><dd>Java, Python, JavaScript, SQL, HTML5, CSS3</dd></div>
+            <div class="skill-row"><dt>Backend</dt><dd>Spring Boot, Spring Data JPA, REST APIs, Node.js, Express, Electron</dd></div>
+            <div class="skill-row"><dt>Databases</dt><dd>PostgreSQL, MySQL</dd></div>
+            <div class="skill-row"><dt>Tools</dt><dd>Git, GitHub, Docker, Maven, JUnit 5, Render, Vercel, Streamlit</dd></div>
+            <div class="skill-row"><dt>Concepts</dt><dd>Data Structures &amp; Algorithms, OOP, RAG, Machine Learning, NLP, Vector Search</dd></div>
+          </dl>
         </div>
+      </section>
 
-        <!-- JavaScript fills these filters from your GitHub repositories. -->
+      <!-- PROJECTS -->
+      <section class="resume-section" id="projects">
+        <div class="heading-row">
+          <h2 class="resume-heading">Projects</h2>
+          <a class="text-link" href="https://github.com/sangameshh31?tab=repositories" target="_blank" rel="noopener noreferrer">All on GitHub ↗</a>
+        </div>
         <div class="filter-bar reveal" id="projectFilters" aria-label="Project filters">
           <button class="filter-btn active" type="button" data-filter="all">All</button>
         </div>
+        <div class="project-status" id="projectStatus" role="status" aria-live="polite">Loading projects from GitHub…</div>
+        <div class="projects-list" id="projectsGrid"></div>
+        <noscript><p class="fallback-message">JavaScript is disabled. Visit <a href="https://github.com/sangameshh31?tab=repositories">GitHub repositories</a> to view projects.</p></noscript>
+      </section>
 
-        <div class="project-status" id="projectStatus" role="status" aria-live="polite">
-          Loading projects from GitHub…
-        </div>
-
-        <div class="projects-grid" id="projectsGrid"></div>
-
-        <noscript>
-          <p class="fallback-message">
-            JavaScript is disabled. Please visit
-            <a href="https://github.com/sangameshh31?tab=repositories">my GitHub repositories</a>
-            to view my projects.
-          </p>
-        </noscript>
-      </div>
-    </section>
-
-    <!-- ==================== RESUME ==================== -->
-    <section class="section" id="resume">
-      <div class="container">
-        <div class="section-heading reveal">
-          <p class="eyebrow">My background</p>
-          <h2>Resume <span>&amp; Experience</span></h2>
-        </div>
-
-        <div class="resume-card reveal">
-          <div class="resume-content">
-            <h3>Resume</h3>
-            <p>
-              View or download my latest resume directly from here.
-            </p>
+      <!-- EDUCATION + RESUME -->
+      <section class="resume-section" id="resume">
+        <h2 class="resume-heading">Education</h2>
+        <div class="section-body reveal">
+          <div class="entry">
+            <div class="entry-head">
+              <h3>B.Tech — Computer Science &amp; Engineering</h3>
+              <span class="entry-meta">7th Semester</span>
+            </div>
+            <p class="entry-sub">CMR University, Bengaluru, Karnataka</p>
+            <p class="entry-desc">Focus: Java development, Data Structures &amp; Algorithms, backend systems, databases, and software engineering for SDE roles.</p>
+          </div>
+          <div class="resume-download">
+            <div>
+              <strong>Full Resume (PDF)</strong>
+              <p>Projects, skills and education in a single downloadable document.</p>
+            </div>
             <div class="resume-actions">
-              <a class="btn btn-primary" href="general.pdf" target="_blank" rel="noopener noreferrer">View Resume <span>↗</span></a>
-              <a class="btn btn-secondary" href="general.pdf" download>Download Resume <span>↓</span></a>
+              <a class="btn btn-primary" href="general.pdf" target="_blank" rel="noopener noreferrer">View ↗</a>
+              <a class="btn btn-secondary" href="general.pdf" download>Download ↓</a>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ==================== CONTACT ==================== -->
-    <section class="section contact-section" id="contact">
-      <div class="container contact-grid">
-        <div class="contact-copy reveal">
-          <p class="eyebrow">Have an opportunity?</p>
-          <h2>Let's build something <span>useful.</span></h2>
-          <p>
-            I'm open to internships, entry-level software engineering opportunities,
-            collaborations, and interesting projects.
-          </p>
-
-          <div class="contact-links">
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sangameshhavalappanavar@gmail.com" target="_blank" rel="noopener noreferrer">
-              <span class="contact-icon">✉</span>
-              <span>
-                <small>Email</small>
-                sangameshhavalappanavar@gmail.com
-              </span>
-            </a>
-            <a href="https://github.com/sangameshh31" target="_blank" rel="noopener noreferrer">
-              <span class="contact-icon">⌘</span>
-              <span>
-                <small>GitHub</small>
-                github.com/sangameshh31
-              </span>
-            </a>
-            <a href="https://www.linkedin.com/in/sangameshhavalappanavar/"
-               target="_blank" rel="noopener noreferrer">
-              <span class="contact-icon">in</span>
-              <span>
-                <small>LinkedIn</small>
-                Connect with me
-              </span>
-            </a>
+      <!-- CONTACT -->
+      <section class="resume-section" id="contact">
+        <h2 class="resume-heading">Contact</h2>
+        <div class="section-body contact-grid reveal">
+          <div class="contact-copy">
+            <p>Open to internships, entry-level software engineering opportunities, collaborations, and interesting projects.</p>
+            <ul class="contact-list">
+              <li><span>Email</span><a href="https://mail.google.com/mail/?view=cm&fs=1&to=sangameshhavalappanavar@gmail.com" target="_blank" rel="noopener noreferrer">sangameshhavalappanavar@gmail.com</a></li>
+              <li><span>GitHub</span><a href="https://github.com/sangameshh31" target="_blank" rel="noopener noreferrer">github.com/sangameshh31</a></li>
+              <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/sangameshhavalappanavar/" target="_blank" rel="noopener noreferrer">linkedin.com/in/sangameshhavalappanavar</a></li>
+              <li><span>Location</span>Bengaluru, Karnataka, India</li>
+            </ul>
           </div>
+          <form class="contact-form" id="contactForm">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Your name" autocomplete="name" required>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell me about your opportunity…" required></textarea>
+            <button class="btn btn-primary" type="submit">Send Message →</button>
+            <p class="form-note">Opens your email app. No data is stored by this website.</p>
+          </form>
         </div>
+      </section>
 
-        <!-- This form uses mailto, so no backend is required. Replace the email above. -->
-        <form class="contact-form reveal delay-one" id="contactForm">
-          <label for="name">Name</label>
-          <input id="name" name="name" type="text" placeholder="Your name" autocomplete="name" required>
-
-          <label for="email">Email</label>
-          <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required>
-
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="6" placeholder="Tell me about your opportunity…" required></textarea>
-
-          <button class="btn btn-primary" type="submit">Send message <span>→</span></button>
-          <p class="form-note" role="note">This opens your email app. No data is stored by this website.</p>
-        </form>
-      </div>
-    </section>
+    </div>
   </main>
 
-  <!-- ==================== FOOTER ==================== -->
   <footer class="footer">
-    <div class="container footer-inner">
-      <a class="logo" href="#home">SH<span>.</span></a>
-      <p>© <span id="year"></span> Sangamesh Havalappanavar. Built with HTML, CSS &amp; JavaScript.</p>
-      <div class="social-links">
-        <a href="https://github.com/sangameshh31" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GH</a>
-        <a href="https://www.linkedin.com/in/sangameshhavalappanavar/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">in</a>
-        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sangameshhavalappanavar@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email">@</a>
-      </div>
-    </div>
+    <p>© <span id="year"></span> Sangamesh Havalappanavar &nbsp;·&nbsp; Bengaluru, India &nbsp;·&nbsp; Built with HTML, CSS &amp; JavaScript</p>
   </footer>
 
   <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">↑</button>
-
   <script src="script.js" defer></script>
 </body>
 </html>

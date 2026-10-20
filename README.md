@@ -1,6 +1,6 @@
 # My Portfolio
 
-A modern, responsive personal portfolio website built with HTML, CSS and vanilla JavaScript. This repository contains the source for the site you see at the root of this project.
+A resume-style personal portfolio website built with HTML, CSS and vanilla JavaScript. Clean document layout — no photo, just summary, skills, projects, education and contact, like a resume on the web.
 
 ## Live Demo
 Live site: https://sangamesh-portfolio-tau.vercel.app/
@@ -36,7 +36,6 @@ my-portfolio/
 ├── script.js
 ├── style.css
 ├── general.pdf        # resume
-├── images/            # images and profile picture
 └── README.md
 ```
 
