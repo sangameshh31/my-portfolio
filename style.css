@@ -132,3 +132,7 @@ button,input,textarea{font:inherit} button{cursor:pointer}
 .back-to-top{transition:transform .25s,opacity .25s} .back-to-top:hover{transform:translateY(-3px)}
 .resume-download{transition:transform .35s,box-shadow .35s} .resume-download:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(15,23,42,.10)}
 @media print{*{animation:none!important;transition:none!important}.sheet{animation:none!important}}
+.section-body p + p{margin-top:12px}
+.quality-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.quality-row span{font-size:.82rem;font-weight:600;padding:6px 12px;border:1px solid var(--border);border-radius:999px;background:var(--accent-soft);color:var(--text);transition:transform .25s,border-color .25s}
+.quality-row span:hover{transform:translateY(-2px);border-color:var(--accent)}
