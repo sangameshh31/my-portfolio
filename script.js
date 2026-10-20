@@ -14,14 +14,45 @@
 /* ---------- Configuration ---------- */
 const GITHUB_USERNAME = "sangameshh31";
 const PROJECT_LIMIT = 6;
-const FEATURED_REPOSITORIES = ["PIZZAPOS", "movie-recommendation-system", "my-portfolio"];
+const FEATURED_REPOSITORIES = ["DocuSage", "PIZZAPOS", "movie-recommendation-system", "my-portfolio"];
 // Repositories to explicitly hide from the projects list (e.g. username repo)
 const EXCLUDED_REPOSITORIES = ["sangameshh31"];
 const CONTACT_EMAIL = "sangameshhavalappanavar@gmail.com"; 
 
 // Map repository names to a live demo URL when the repo doesn't specify a homepage
 // (Keep empty to avoid linking to deployments that are not available.)
-const PROJECT_HOMEPAGES = {};
+const PROJECT_HOMEPAGES = {
+  "DocuSage": "https://docusage-osm6.onrender.com"
+};
+
+// Curated display data: GitHub repo metadata alone is thin (DocuSage had no
+// description), so these overrides keep the cards accurate and specific.
+const PROJECT_OVERRIDES = {
+  "DocuSage": {
+    title: "DocuSage — RAG Backend in Java",
+    description: "Retrieval-Augmented Generation backend in Java 17 / Spring Boot 3. Upload PDF or text documents, ask questions in plain English, and get answers grounded in your documents with the exact passages cited. Hand-built vector index (cosine search), pluggable Gemini/local AI providers, 16 passing tests, deployed live on Render.",
+    technologies: ["Java", "Spring Boot", "REST API", "RAG", "JUnit 5", "Docker"]
+  },
+  "PIZZAPOS": {
+    title: "PizzaPOS — Restaurant POS System",
+    description: "Offline desktop POS & restaurant management system built with Electron, Node.js, Express.js and MySQL.",
+    technologies: ["JavaScript", "Electron", "Node.js", "Express", "MySQL"]
+  },
+  "movie-recommendation-system": {
+    title: "CineMatch — Movie Recommendation System",
+    description: "A hybrid AI/ML movie recommendation system combining SVD collaborative filtering, item-based recommendation, semantic embeddings, vector search, and personalized feedback-based re-ranking.",
+    technologies: ["Python", "Machine Learning", "Streamlit", "NLP"]
+  }
+};
+
+// Used only if the GitHub API is unreachable/rate-limited, so the section
+// never renders empty.
+const FALLBACK_PROJECTS = [
+  { name: "DocuSage", full_name: "sangameshh31/DocuSage", html_url: "https://github.com/sangameshh31/DocuSage", homepage: "https://docusage-osm6.onrender.com", language: "Java", topics: [], description: null },
+  { name: "PIZZAPOS", full_name: "sangameshh31/PIZZAPOS", html_url: "https://github.com/sangameshh31/PIZZAPOS", homepage: "", language: "JavaScript", topics: [], description: null },
+  { name: "movie-recommendation-system", full_name: "sangameshh31/movie-recommendation-system", html_url: "https://github.com/sangameshh31/movie-recommendation-system", homepage: "https://cine-match-ai-01.streamlit.app", language: "Python", topics: [], description: null },
+  { name: "my-portfolio", full_name: "sangameshh31/my-portfolio", html_url: "https://github.com/sangameshh31/my-portfolio", homepage: "https://sangamesh-portfolio-tau.vercel.app/", language: "CSS", topics: [], description: "A modern and responsive personal portfolio website built using HTML, CSS and vanilla JavaScript." }
+];
 
 function openEmailComposer(subject = "", body = "") {
   const gmailUrl = new URL("https://mail.google.com/mail/");
@@ -153,6 +184,11 @@ function escapeHTML(value = "") {
 }
 
 function getTechnologies(repo) {
+  const override = PROJECT_OVERRIDES[repo.name];
+  if (override && Array.isArray(override.technologies)) {
+    return override.technologies.slice(0, 6);
+  }
+
   const technologies = new Set();
 
   if (repo.language) technologies.add(repo.language);
@@ -190,7 +226,9 @@ function renderProjects(list) {
         ).join("")
       : `<span class="project-tag">GitHub</span>`;
 
-    const description = repo.description || "A project built and maintained on GitHub.";
+    const override = PROJECT_OVERRIDES[repo.name];
+    const description = (override && override.description) || repo.description || "A project built and maintained on GitHub.";
+    const displayTitle = (override && override.title) || repo.name;
 
     // Prefer explicit repo homepage, otherwise consult the manual mapping
     const homepage = repo.homepage || PROJECT_HOMEPAGES[repo.name] || "";
@@ -206,7 +244,7 @@ function renderProjects(list) {
         >
 
         <div class="project-body">
-          <h3 class="project-title">${escapeHTML(repo.name)}</h3>
+          <h3 class="project-title">${escapeHTML(displayTitle)}</h3>
 
           <p class="project-description">
             ${escapeHTML(description)}
@@ -322,21 +360,12 @@ async function loadGitHubProjects() {
   } catch (error) {
     console.error("Could not load GitHub projects:", error);
 
-    projectCount.textContent = "—";
+    repositories = FALLBACK_PROJECTS;
+    projectCount.textContent = repositories.length;
+    buildFilters();
+    renderProjects(repositories);
     projectStatus.textContent =
-      "GitHub projects could not be loaded right now. You can still view all repositories on GitHub.";
-
-    projectsGrid.innerHTML = `
-      <div class="fallback-message">
-        <strong>Unable to load projects automatically.</strong>
-        <p style="margin-top:8px">
-          <a href="https://github.com/${GITHUB_USERNAME}?tab=repositories"
-             target="_blank" rel="noopener noreferrer">
-             Open my GitHub repositories ↗
-          </a>
-        </p>
-      </div>
-    `;
+      `${repositories.length} featured projects shown. Live list on GitHub.`;
   }
 }
 

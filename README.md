@@ -10,6 +10,7 @@ Open `index.html` in your browser or serve the folder with a static file server 
 ## Projects Included
 This portfolio highlights several projects. The featured repositories are:
 
+- **DocuSage** — RAG backend in Java 17 / Spring Boot 3 (live: https://docusage-osm6.onrender.com) — https://github.com/sangameshh31/DocuSage
 - https://github.com/sangameshh31/PIZZAPOS
 - https://github.com/sangameshh31/movie-recommendation-system
 - https://github.com/sangameshh31/my-portfolio
