@@ -14,9 +14,9 @@
 /* ---------- Configuration ---------- */
 const GITHUB_USERNAME = "sangameshh31";
 const PROJECT_LIMIT = 6;
-const FEATURED_REPOSITORIES = ["DocuSage", "PIZZAPOS", "movie-recommendation-system", "my-portfolio"];
+const FEATURED_REPOSITORIES = ["DocuSage", "PIZZAPOS", "movie-recommendation-system"];
 // Repositories to explicitly hide from the projects list (e.g. username repo)
-const EXCLUDED_REPOSITORIES = ["sangameshh31"];
+const EXCLUDED_REPOSITORIES = ["sangameshh31", "my-portfolio"];
 const CONTACT_EMAIL = "sangameshhavalappanavar@gmail.com"; 
 
 // Map repository names to a live demo URL when the repo doesn't specify a homepage
@@ -50,8 +50,7 @@ const PROJECT_OVERRIDES = {
 const FALLBACK_PROJECTS = [
   { name: "DocuSage", full_name: "sangameshh31/DocuSage", html_url: "https://github.com/sangameshh31/DocuSage", homepage: "https://docusage-osm6.onrender.com", language: "Java", topics: [], description: null },
   { name: "PIZZAPOS", full_name: "sangameshh31/PIZZAPOS", html_url: "https://github.com/sangameshh31/PIZZAPOS", homepage: "", language: "JavaScript", topics: [], description: null },
-  { name: "movie-recommendation-system", full_name: "sangameshh31/movie-recommendation-system", html_url: "https://github.com/sangameshh31/movie-recommendation-system", homepage: "https://cine-match-ai-01.streamlit.app", language: "Python", topics: [], description: null },
-  { name: "my-portfolio", full_name: "sangameshh31/my-portfolio", html_url: "https://github.com/sangameshh31/my-portfolio", homepage: "https://sangamesh-portfolio-tau.vercel.app/", language: "CSS", topics: [], description: "A modern and responsive personal portfolio website built using HTML, CSS and vanilla JavaScript." }
+  { name: "movie-recommendation-system", full_name: "sangameshh31/movie-recommendation-system", html_url: "https://github.com/sangameshh31/movie-recommendation-system", homepage: "https://cine-match-ai-01.streamlit.app", language: "Python", topics: [], description: null }
 ];
 
 function openEmailComposer(subject = "", body = "") {
